@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Shubham's Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(120deg, #f8faff, #ffffff);
+      color: #2c2c2c;
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    
+    header {
+      position: sticky; top: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 15px 40px;
+      background: #ffffffee;
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(180,180,180,0.3);
+      z-index: 1000;
+    }
+    header h1 { font-size: 22px; font-weight: 700; color: #34495e; }
+    nav { display: flex; gap: 15px; }
+    nav button {
+      background: linear-gradient(135deg, #34495e, #5dade2);
+      border: none; color: white;
+      padding: 8px 18px; border-radius: 20px;
+      cursor: pointer; font-size: 14px; font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    nav button:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+
+    
+    .hero {
+      min-height: 70vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 40px 20px; flex-wrap: wrap; gap: 25px;
+      text-align: left;
+    }
+    .profile-pic {
+      width: 170px; height: 170px; border-radius: 50%;
+      border: 4px solid #5dade2; object-fit: cover;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+    .hero-text { max-width: 520px; }
+    .hero-text h2 { font-size: 32px; margin-bottom: 12px; color: #2c3e50; }
+    .hero-text h3 { font-size: 20px; color: #5dade2; margin-bottom: 15px; }
+    .hero-text p { font-size: 15px; color: #555; line-height: 1.7; }
+
+    
+    section {
+      max-width: 1100px; margin: 60px auto; padding: 40px;
+      border-radius: 15px;
+      background: #ffffffea; backdrop-filter: blur(6px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible { opacity: 1; transform: translateY(0); }
+    section h2 {
+      font-size: 22px; margin-bottom: 25px; color: #34495e;
+      border-left: 5px solid #5dade2; padding-left: 12px;
+    }
+
+    
+    .details-list { list-style: none; line-height: 1.9; font-size: 15px; color: #2c3e50; }
+    .details-list li strong { color: #5dade2; margin-right: 8px; }
+
+    
+    .skills { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skill {
+      padding: 10px 16px; border-radius: 20px;
+      background: #ecf5ff; color: #2c3e50; font-size: 14px;
+      font-weight: 500; border: 1px solid #d6e9ff;
+      transition: 0.3s;
+    }
+    .skill:hover { background: #5dade2; color: white; }
+
+
+    .projects, .certificates, .contacts {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      padding: 18px; border-radius: 12px;
+      background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      display: flex; gap: 12px; align-items: center;
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .card.visible { opacity: 1; transform: translateY(0); }
+    .card:hover { transform: translateY(-6px) scale(1.02); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    .card img { width: 42px; }
+    .card h3 { font-size: 16px; color: #2c3e50; margin-bottom: 4px; }
+    .card p { font-size: 14px; color: #555; }
+    .card a { color: #5dade2; text-decoration: none; font-weight: 500; }
+    .card a:hover { text-decoration: underline; }
+
+    
+    footer {
+      background: #34495e;
+      text-align: center; padding: 18px;
+      color: white; margin-top: 60px; font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <header>
+    <h1>Shubham's Portfolio</h1>
+    <nav>
+      <button onclick="document.getElementById('details').scrollIntoView({behavior:'smooth'})">Details</button>
+      <button onclick="document.getElementById('skills').scrollIntoView({behavior:'smooth'})">Skills</button>
+      <button onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</button>
+      <button onclick="document.getElementById('certificate').scrollIntoView({behavior:'smooth'})">Certificates</button>
+      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+    </nav>
+  </header>
+
+  
+  <div class="hero">
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+    <div class="hero-text">
+      <h2>Hello, I'm Shubham 👋</h2>
+      <h3>Aspiring Software Engineer | Java | Python | Web Developer</h3>
+      <p>Passionate about building scalable applications, solving problems through technology,  
+      and contributing to innovative IT solutions. I am eager to bring my knowledge and  
+      creativity to real-world industry projects.</p>
+    </div>
+  </div>
+
+  
+  <section id="details">
+    <h2>Details</h2>
+    <ul class="details-list">
+      <li><strong>Name:</strong> Shubham Dattatray Pansare</li>
+      <li><strong>Email:</strong> shubhampansare0530@gmail.com</li>
+      <li><strong>Phone:</strong> +91 8857008505</li>
+      <li><strong>Location:</strong> Pune,India</li>
+      <li><strong>Education:</strong> B.Tech Engineering</li>
+      <li><strong>Career Goal:</strong> To become a skilled Software Engineer contributing to real-world IT solutions</li>
+    </ul>
+  </section>
+
+  
+  <section id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills">
+      <span class="skill">Java</span>
+      <span class="skill">Python</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">SQL & Databases</span>
+      <span class="skill">Git & GitHub</span>
+      <span class="skill">Agile & Jira</span>
+      <span class="skill">Linux (Red Hat)</span>
+    </div>
+  </section>
+
+  
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/919/919827.png" alt="Java">
+        <div>
+          <h3>Library Management System</h3>
+          <p>Developed a Java-based system to manage book inventory, borrowing, and student records,  
+          improving efficiency and reducing manual effort.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="Web">
+        <div>
+          <h3>Portfolio Website</h3>
+          <p>A responsive personal portfolio website showcasing projects, skills, and certificates.  
+          Built with HTML, CSS, and modern UI design principles.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="Python">
+        <div>
+          <h3>Data Analysis Dashboard</h3>
+          <p>Created an interactive dashboard using Python (Pandas, Matplotlib) to visualize  
+          and analyze datasets for decision-making insights.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="certificate">
+    <h2>Certificates</h2>
+    <div class="certificates">
+      <div class="card">
+        <img src="Redhat.png" alt="Red Hat Logo">
+        <div>
+          <h3>Red Hat System Administrator</h3>
+          <p>Completed RH124 & RH134 training.  
+          Gained expertise in Linux system administration.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="Coursera.png" alt="Coursera">
+        <div>
+          <h3>Software Engineering: Modeling Systems</h3>
+          <p>HKUST (Coursera). <a href="https://coursera.org/verify/YBWIO91XWGV5" target="_blank">Verify</a></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://wac-cdn.atlassian.com/dam/jcr:12e66b5e-f6cf-45c8-bafc-c86ab85a24f3/Atlassian-horizontal-blue-rgb.png" alt="Atlassian">
+        <div>
+          <h3>Agile with Atlassian Jira</h3>
+          <p>Atlassian (Coursera). <a href="https://coursera.org/verify/5MINK7DEHQE7" target="_blank">Verify</a></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_Logo.svg" alt="Google">
+        <div>
+          <h3>Agile Project Management</h3>
+          <p>Google (Coursera). <a href="https://coursera.org/verify/MUL1NGCVXDFE" target="_blank">Verify</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contacts">
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+        <div>
+          <h3>Email</h3>
+          <p><a href="mailto:shubhampansare0530@gmail.com">shubhampansare0530@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        <div>
+          <h3>LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/shubham-pansare-621688292" target="_blank">linkedin.com/in/shubham-pansare</a></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111432.png" alt="GitHub">
+        <div>
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/SHUBHAM8505" target="_blank">github.com/SHUBHAM8505</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <footer>
+    <p>© 2025 Shubham Dattatray Pansare | Portfolio Website</p>
+  </footer>
+
+
+  <script>
+    const sections = document.querySelectorAll("section");
+    const cards = document.querySelectorAll(".card");
+
+    function revealOnScroll() {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top < triggerBottom) sec.classList.add("visible");
+      });
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < triggerBottom) card.classList.add("visible");
+      });
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+</body>
+</html>
