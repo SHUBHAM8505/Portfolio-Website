@@ -1,0 +1,63 @@
+body {
+  background: #f2f4f7; /* Light gray background instead of pure white */
+  color: #1a1a1a; /* Darker text color for readability */
+}
+
+header {
+  background: #e9f1fb; /* Soft very light blue background */
+  border-bottom: 1px solid #a0bbdc; /* Slightly stronger border shade */
+}
+
+header h1 {
+  color: #223e5d; /* Darker navy blue for heading */
+}
+
+nav button {
+  background: linear-gradient(135deg, #2c3a63, #4a69ad); /* Deeper blue gradient */
+  color: #eaeef3; /* Off-white text */
+}
+
+nav button:hover {
+  box-shadow: 0 6px 20px rgba(41, 64, 118, 0.35);
+}
+
+section {
+  background: #ffffffdf; /* Slightly tinted white */
+  box-shadow: 0 6px 20px rgba(32, 48, 75, 0.07);
+}
+
+section h2 {
+  color: #335577; /* A deeper steel blue */
+  border-left: 5px solid #4a69ad; /* Slightly darker blue accent */
+}
+
+.details-list li strong,
+.qualification-list li strong {
+  color: #4a69ad; /* Deeper accent color for strong text */
+}
+
+.skill {
+  background: #dbe6f7; /* Soft blue background for skill tags */
+  color: #2e405a;
+  border: 1px solid #a2b7db;
+}
+
+.skill:hover {
+  background: #4a69ad;
+  color: #f1f3f8;
+}
+
+.card {
+  background: #fefefe; /* Slightly off-white cards */
+  box-shadow: 0 4px 15px rgba(32, 48, 75, 0.1);
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(32, 48, 75, 0.2);
+  transform: translateY(-6px) scale(1.03);
+}
+
+footer {
+  background: #2c3a63; /* Dark navy footer */
+  color: #d7dce7; /* Light gray text */
+}
